@@ -25,3 +25,11 @@ img {
   max-width: 100%;
   display: block;
 }
+
+section {
+  height: 100vh;
+}
+
+footer{
+  text-align: center;
+}

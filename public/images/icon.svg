@@ -1,0 +1,16 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95 97" width="95" height="97">
+  <!-- svg-source:excalidraw -->
+  
+  <defs>
+    <style>
+      @font-face {
+        font-family: "Virgil";
+        src: url("https://excalidraw.com/Virgil.woff2");
+      }
+      @font-face {
+        font-family: "Cascadia";
+        src: url("https://excalidraw.com/Cascadia.woff2");
+      }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="95" height="97" fill="#ffffff"></rect><g stroke-linecap="round" transform="translate(10 10) rotate(0 37.5 38.5)"><path d="M0.21 0.13 L73.47 -0.53 L76.3 78.29 L-0.32 76.83" stroke="none" stroke-width="0" fill="#000000"></path><path d="M-1.53 1.06 C25.55 0.43, 47.09 -0.42, 75.87 1.77 M-0.43 0.89 C23.09 0.81, 45.63 -0.56, 74.9 0.14 M73.59 -1.73 C75.05 18.17, 74.54 37.14, 75.86 76.46 M74.4 0.35 C74.85 18.7, 76.21 35.32, 74.74 76.46 M75.62 77.01 C43.26 77.75, 14.25 79.13, -1.69 77.52 M75.05 77.6 C44.89 75.67, 15.27 76.2, -0.22 77.74 M0.86 78.05 C-0.13 56.81, -1.18 35.6, -0.2 -0.83 M-0.09 76.14 C0.19 48.91, -0.89 21.37, 0.5 -0.21" stroke="#000000" stroke-width="1" fill="none"></path></g><g transform="translate(15 36.5) rotate(0 32.5 12)"><text x="32.5" y="19" font-family="Cascadia, Segoe UI Emoji" font-size="20px" fill="#ffffff" text-anchor="middle" style="white-space: pre;" direction="ltr">FWS</text></g></svg>

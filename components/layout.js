@@ -1,21 +1,18 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "./layout.module.css";
+import utilStyles from "../styles/utils.module.css";
+import Link from "next/link";
 
-const name = 'Fang W. Shen'
-export const siteTitle = 'Next.js Sample Website'
+const name = `👋  I'm Fang`;
+export const siteTitle = "FWS - Home";
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="FWS - Portfolio" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -23,14 +20,21 @@ export default function Layout({ children, home }) {
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
         <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className={styles.header + ` ${home ? styles.fullScreen : ""}`}>
         {home ? (
           <>
-            <Image
+            {/* <Image
               priority
               src="/images/profile.jpg"
+              className={utilStyles.borderCircle}
+              height={144}
+              width={144}
+              alt={name}
+            /> */}
+            <Image
+              priority
+              src="/images/icon.svg"
               className={utilStyles.borderCircle}
               height={144}
               width={144}
@@ -68,6 +72,30 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+
+      <footer>
+        <div>
+          <a href="https://linkedin.com/in/fang-wen-shen">
+            <Image
+              priority
+              src="/images/linkedin.svg"
+              height={33}
+              width={33}
+              alt={name}
+            />
+          </a>
+          <a href="https://github.com/fang-w-shen">
+            <Image
+              priority
+              src="/images/github.svg"
+              height={33}
+              width={33}
+              alt={name}
+            />
+          </a>
+        </div>
+        © {new Date().getFullYear()} Fang-Wen Shen
+      </footer>
     </div>
-  )
+  );
 }
