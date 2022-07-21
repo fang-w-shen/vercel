@@ -23,6 +23,7 @@
 .headingMd {
   font-size: 1.2rem;
   line-height: 1.5;
+  position: relative;
 }
 
 .borderCircle {
@@ -36,7 +37,12 @@
 .padding1px {
   padding-top: 1px;
 }
-
+.fullWidth {
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  position: absolute;
+}
 .list {
   list-style: none;
   padding: 0;

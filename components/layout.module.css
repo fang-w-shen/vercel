@@ -8,12 +8,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .fullScreen {
   height: 100vh;
-  padding-top:45%;
+  padding-top: 35%;
+}
+
+@media (orientation: landscape) and (hover: none) {
+  .fullScreen {
+    padding-top: 0;
+  }
 }
 
 .backToHome {

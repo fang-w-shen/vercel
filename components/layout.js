@@ -1,13 +1,21 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import { useEffect } from "react";
+import utilStyles from "../styles/utils.module.css";
+import styles from "./layout.module.css";
 
 const name = `👋  I'm Fang`;
 export const siteTitle = "FWS - Home";
 
 export default function Layout({ children, home }) {
+  useEffect(() => {
+    var card = document.getElementById('card');
+    card && document.getElementById('flip').addEventListener('click', function () {
+      card.classList.toggle('flipped');
+    }, false);
+
+  })
   return (
     <div className={styles.container}>
       <Head>
@@ -24,23 +32,34 @@ export default function Layout({ children, home }) {
       <header className={styles.header + ` ${home ? styles.fullScreen : ""}`}>
         {home ? (
           <>
-            {/* <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            /> */}
-            <Image
-              priority
-              src="/images/icon.svg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
+
+            <button id="flip">
+              <div id="card">
+                <div className="front">
+                  <Image
+                    priority
+                    src="/images/icon.svg"
+                    className={utilStyles.borderCircle}
+                    height={144}
+                    width={144}
+                    alt={name}
+                  />
+                </div>
+
+                <div className="back">
+                  <Image
+                    priority
+                    src="/images/profile.svg"
+                    height={144}
+                    width={144}
+                    alt={name}
+                  />
+                </div>
+
+              </div>
+            </button>
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <button className="arrow bounce"></button>
           </>
         ) : (
           <>
@@ -65,13 +84,15 @@ export default function Layout({ children, home }) {
         )}
       </header>
       <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+      {
+        !home && (
+          <div className={styles.backToHome}>
+            <Link href="/">
+              <a>← Back to home</a>
+            </Link>
+          </div>
+        )
+      }
 
       <footer>
         <div>
@@ -94,8 +115,8 @@ export default function Layout({ children, home }) {
             />
           </a>
         </div>
-        © {new Date().getFullYear()} Fang-Wen Shen
+        © {new Date().getFullYear()} <a href='https://github.com/fang-w-shen'>Fang-Wen Shen</a>
       </footer>
-    </div>
+    </div >
   );
 }
