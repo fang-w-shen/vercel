@@ -15,7 +15,7 @@ export default function Layout({ children, home }) {
     var element = document.querySelector("#section");
     var button = document.getElementById("arrow");
     button.addEventListener("click", () => {
-      element.scrollIntoView({ behavior: "smooth", block: "end" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     });
     // smooth scroll to element and align it at the bottom
     card &&

@@ -147,7 +147,7 @@ button {
   position: fixed;
   top: 0;
   left: -100px;
-  width: 1em;
+  width: 2em;
   z-index: 2;
   height: 100%;
   transform: skewX(-30deg);
@@ -178,12 +178,12 @@ button {
 }
 @keyframes slides {
   0% {
-    left: 300%;
+    left: 250%;
     top: 0;
   }
 
   100% {
-    left: -700%;
+    left: -550%;
     top: 0;
   }
 }
