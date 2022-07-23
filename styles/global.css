@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
   overflow-x: hidden;
@@ -64,11 +64,11 @@ button {
   background-size: contain;
 }
 
-@media (orientation: portrait) and (hover: none) {
+/* @media (orientation: portrait) and (hover: none) and (pointer: fine) {
   .arrow {
     bottom: 11em;
   }
-}
+} */
 
 .bounce {
   animation: bounce 2s infinite;
@@ -106,8 +106,83 @@ button {
 
 #card .back {
   transform: rotateY(180deg);
+  z-index: 3;
 }
 
 #card.flipped {
   transform: rotateY(180deg);
+}
+#flip {
+  overflow: hidden;
+}
+
+#card:before {
+  content: "";
+  position: fixed;
+  top: 0;
+
+  width: 20px;
+  z-index: 2;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  /* background-color: red; */
+  transform: skewX(-30deg);
+  animation-name: slide;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: right;
+  /* background:  rgba(255, 255, 255, 0.3); */
+  /* background: linear-gradient(
+      to right, 
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 77%,
+      rgba(255, 255, 255, 0.5) 92%,
+      rgba(255, 255, 255, 0.0) 100%
+    ); */
+}
+#card:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 40px;
+  z-index: 2;
+  height: 100%;
+  transform: skewX(-30deg);
+  animation-name: slides;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  background: rgba(255, 255, 255, 0.3);
+  /* background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0.13) 0%,
+        rgba(255, 255, 255, 0.13) 77%,
+        rgba(255, 255, 255, 0.5) 92%,
+        rgba(255, 255, 255, 0.0) 100%
+      ); */
+}
+@keyframes slide {
+  0% {
+    left: -50%;
+    top: 0;
+  }
+
+  100% {
+    left: 930%;
+    top: 0;
+  }
+}
+@keyframes slides {
+  0% {
+    left: 300%;
+    top: 0;
+  }
+
+  100% {
+    left: -700%;
+    top: 0;
+  }
 }

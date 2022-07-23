@@ -10,12 +10,26 @@ export const siteTitle = "FWS - Home";
 
 export default function Layout({ children, home }) {
   useEffect(() => {
-    var card = document.getElementById('card');
-    card && document.getElementById('flip').addEventListener('click', function () {
-      card.classList.toggle('flipped');
-    }, false);
+    var card = document.getElementById("card");
+    var name = document.getElementById("name");
 
-  })
+    card &&
+      document.getElementById("flip").addEventListener(
+        "click",
+        function () {
+          card.classList.toggle("flipped");
+        },
+        false
+      );
+    name &&
+      document.getElementById("name").addEventListener(
+        "click",
+        function () {
+          card.classList.toggle("flipped");
+        },
+        false
+      );
+  });
   return (
     <div className={styles.container}>
       <Head>
@@ -32,7 +46,6 @@ export default function Layout({ children, home }) {
       <header className={styles.header + ` ${home ? styles.fullScreen : ""}`}>
         {home ? (
           <>
-
             <button id="flip">
               <div id="card">
                 <div className="front">
@@ -55,10 +68,11 @@ export default function Layout({ children, home }) {
                     alt={name}
                   />
                 </div>
-
               </div>
             </button>
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl} id="name">
+              {name}
+            </h1>
             <button className="arrow bounce"></button>
           </>
         ) : (
@@ -84,15 +98,13 @@ export default function Layout({ children, home }) {
         )}
       </header>
       <main>{children}</main>
-      {
-        !home && (
-          <div className={styles.backToHome}>
-            <Link href="/">
-              <a>← Back to home</a>
-            </Link>
-          </div>
-        )
-      }
+      {!home && (
+        <div className={styles.backToHome}>
+          <Link href="/">
+            <a>← Back to home</a>
+          </Link>
+        </div>
+      )}
 
       <footer>
         <div>
@@ -115,8 +127,9 @@ export default function Layout({ children, home }) {
             />
           </a>
         </div>
-        © {new Date().getFullYear()} <a href='https://github.com/fang-w-shen'>Fang-Wen Shen</a>
+        © {new Date().getFullYear()}{" "}
+        <a href="https://github.com/fang-w-shen">Fang-Wen Shen</a>
       </footer>
-    </div >
+    </div>
   );
 }
