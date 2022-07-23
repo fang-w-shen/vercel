@@ -120,7 +120,7 @@ button {
   content: "";
   position: fixed;
   top: 0;
-
+  left: -100px;
   width: 1em;
   z-index: 2;
   height: 100%;
@@ -146,6 +146,7 @@ button {
   content: "";
   position: fixed;
   top: 0;
+  left: -100px;
   width: 1em;
   z-index: 2;
   height: 100%;
@@ -155,7 +156,7 @@ button {
   animation-timing-function: ease-in-out;
   animation-delay: 0.5s;
   animation-iteration-count: infinite;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.6);
   /* background: linear-gradient(
         to right, 
         rgba(255, 255, 255, 0.13) 0%,
