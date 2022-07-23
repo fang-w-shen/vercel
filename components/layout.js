@@ -12,7 +12,12 @@ export default function Layout({ children, home }) {
   useEffect(() => {
     var card = document.getElementById("card");
     var name = document.getElementById("name");
-
+    var element = document.querySelector("#section");
+    var button = document.getElementById("arrow");
+    button.addEventListener("click", () => {
+      element.scrollIntoView({ behavior: "smooth", block: "end" });
+    });
+    // smooth scroll to element and align it at the bottom
     card &&
       document.getElementById("flip").addEventListener(
         "click",
@@ -73,7 +78,7 @@ export default function Layout({ children, home }) {
             <h1 className={utilStyles.heading2Xl} id="name">
               {name}
             </h1>
-            <button className="arrow bounce"></button>
+            <button className="arrow bounce" id="arrow"></button>
           </>
         ) : (
           <>
